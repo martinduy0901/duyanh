@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>San Pham mau</title> 
+    <link rel="stylesheet" href="../CSS/SanPhamMau.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    
+<script>
+    function magnify(imgID, zoom) {
+      var img, glass, w, h, bw;
+      img = document.getElementById(imgID);
+      /*create magnifier glass:*/
+      glass = document.createElement("DIV");
+      glass.setAttribute("class", "img-magnifier-glass");
+      /*insert magnifier glass:*/
+      img.parentElement.insertBefore(glass, img);
+      /*set background properties for the magnifier glass:*/
+      glass.style.backgroundImage = "url('" + img.src + "')";
+      glass.style.backgroundRepeat = "no-repeat";
+      glass.style.backgroundSize = (img.width * zoom) + "px " + (img.height * zoom) + "px";
+      bw = 3;
+      w = glass.offsetWidth / 2;
+      h = glass.offsetHeight / 2;
+      /*execute a function when someone moves the magnifier glass over the image:*/
+      glass.addEventListener("mousemove", moveMagnifier);
+      img.addEventListener("mousemove", moveMagnifier);
+      /*and also for touch screens:*/
+      glass.addEventListener("touchmove", moveMagnifier);
+      img.addEventListener("touchmove", moveMagnifier);
+      function moveMagnifier(e) {
+        var pos, x, y;
+        /*prevent any other actions that may occur when moving over the image*/
+        e.preventDefault();
+        /*get the cursor's x and y positions:*/
+        pos = getCursorPos(e);
+        x = pos.x;
+        y = pos.y;
+        /*prevent the magnifier glass from being positioned outside the image:*/
+        if (x > img.width - (w / zoom)) {x = img.width - (w / zoom);}
+        if (x < w / zoom) {x = w / zoom;}
+        if (y > img.height - (h / zoom)) {y = img.height - (h / zoom);}
+        if (y < h / zoom) {y = h / zoom;}
+        /*set the position of the magnifier glass:*/
+        glass.style.left = (x - w) + "px";
+        glass.style.top = (y - h) + "px";
+        /*display what the magnifier glass "sees":*/
+        glass.style.backgroundPosition = "-" + ((x * zoom) - w + bw) + "px -" + ((y * zoom) - h + bw) + "px";
+      }
+      function getCursorPos(e) {
+        var a, x = 0, y = 0;
+        e = e || window.event;
+        /*get the x and y positions of the image:*/
+        a = img.getBoundingClientRect();
+        /*calculate the cursor's x and y coordinates, relative to the image:*/
+        x = e.pageX - a.left;
+        y = e.pageY - a.top;
+        /*consider any page scrolling:*/
+        x = x - window.pageXOffset;
+        y = y - window.pageYOffset;
+        return {x : x, y : y};
+      }
+    }
+    </script>
+
+
+
+
+</head>
+
+
+
+  <body>
+    
+    <!-- <div class="img-magnifier-container">
+      
+     </div> -->
+
+
+
+      
+
+  <div class="container-fixed">
+      <div class="row">
+        <div class="col-xs-2"></div>
+        <div class="col-xs-8">
+            <div class="row">
+                <div class="col-xs-6">
+                  <img id="myimage" src="/image/kinh1.jpg" width="800px" height="500px">
+                  <div class="thumbs">
+                      <ul>
+                          <li>
+                               <button class="nut" > <a href="/image/kinh1.jpg" target="_self"><img src="/image/kinh1.jpg" alt="kinh1" width="63" height="42"></a> </button> 
+                           </li>
+                           <li>
+                                <button class="nut" > <a href="/image/kinh2.jpg" target="_self"><img src="/image/kinh2.jpg" alt="kinh2" width="63" height="42"> </a> </button>
+                            </li>
+                            <li>
+                                <button ><a href="/image/kinh3.jpg" target="_self"><img src="/image/kinh3.jpg" alt="kinh3" width="63" height="42"> </a> </button>
+                            </li>
+                        </ul>
+                  </div>
+                  <p>Kính Ray-Ban là một biểu tượng thời trang và khẳng định phong cách sống với lịch sử ra đời từ hơn 70 năm trước. Từ sản phẩm mắt kính Aviator đến kính Wayfarer và nhiều loại kính huyền thoại khác, Ray-Ban đã tạo nên một trào lưu văn hóa lan tỏa mạnh mẽ đến nhiều tầng lớp khác nhau, dù là Hollywood hay trong quân đội Mỹ. Theo đuổi thông điệp “Never hide” - “Không bao giờ che giấu”, Ray-Ban đã và đang là sản phẩm không thể thiếu dành cho những ai yêu thích sự chân thực, muốn thể hiện cái tôi độc lập và khác biệt của mình.</p>
+                </div>
+                <div class="col-xs-2"></div>
+                <div class="col-xs-4">
+                              <div class="ThongTinSanPham">
+              
+                                <img src="Logo/Ray-Ban-Logo.jpg" weight="100px" height="200px" alt="">
+            
+                                <div class="IDSP">
+                                <b>Ma San Pham:</b>duyanhdeptrai^^
+                                <br>     
+                                </div>
+                                    <div >
+                                      <p><b>Giá:</b> 
+                                          <span class="Gia">600<sup>$</sup></span> 
+                                      </p>
+                                    </div> <br>                               
+                                        <div class="row">
+                                           <!-- <div class="col-xs-2"></div> -->
+                                           <div class="col-xs-4">
+                                                  <select name="SoLuong" id="SoLuong" >
+                                                    <option value="1">1</option>
+                                                    <option value="1">2</option>
+                                                    <option value="1">3</option>
+                                                    <option value="1">4</option>
+                                                    <option value="1">5</option>
+                                                    <option value="1">6</option>
+                                                    <option value="1">7</option>
+                                                    <option value="1">8</option>
+                                                    <option value="1">9</option>
+                                                    <option value="1">10</option>
+                                                </select>
+                                           </div>
+                                           <div class="col-xs-8">
+                                                <span ><a href="" class="DatHang" >DAT HANG</a></span> 
+                                           </div>
+                                        </div> <br>      
+                                        <p>                                                                                                                                                                                                         
+                            <div class="div1" id="btn1" > PHUONG THUC THANH TOAN </div> 
+                                  <div id="b1" style="display: none; ">*Day la thong tin san pham </div>  <br>
+                            <div class="div1"  id="btn2"  >  MUA HANG VA GIAO HANG </div>
+                                  <div id="b2" style="display: none; ">HEllo</div><br>
+                            <div class="div1" id="btn3"  >  THONG TIN LIEN HE </div>
+                                  <div id="b3" style="display: none; ">hahha </div> </p><br>
+                                  <div class="row"></div>
+
+                                    <p  class="glyphicon glyphicon-ok" id="text-1" onclick="myFunction()"> 100% Money Back Guarante</p>  <br>
+                                    <p  class="glyphicon glyphicon-ok" id="text-1" onclick="myFunction()"> Free Ship and Return</p>  
+                                    
+                                    <span class="popuptext" id="myPopup">A Simple Popup!</span>
+                                    </div>
+
+                                    <h2>Size</h2>
+                                    
+                                        <div class="col-xs-6">
+                                                    <img src="/HTML/hinhsize/1.png"  alt="">
+                                                      <div class="row">                
+                                                            <div class="col-xs-3">
+                                                            </div>
+                                                            <div class="col-xs-4"> 
+                                                              <p>90mm </p> 
+                                                            </div>
+                                                            <div class="col-xs-5"> 
+                                                            </div>
+                                                      </div>
+                                                                                            
+                                                      <img src="/HTML/hinhsize/3.png" alt="">
+                                                      <div class="row">                
+                                                              <div class="col-xs-5">
+                                                                <p>50mm</p>
+                                                              </div>
+                                                              <div class="col-xs-1">                                                                 
+                                                              </div>
+                                                              <div class="col-xs-6">
+                                                                <p>58mm</p> 
+                                                              </div>
+                                                      </div>
+                                                      
+                                        </div>                                                                                                                                                                                                         
+                                        <div class="col-xs-6">                                                                                                                                                                                                                                                
+                                                    <img src="/HTML/hinhsize/2.png"  alt="">
+                                                      <div class="row">                
+                                                        <div class="col-xs-2">
+                                                        </div>
+                                                        <div class="col-xs-8"> 
+                                                          <p>140mm</p> 
+                                                        </div>
+                                                        <div class="col-xs-2">
+                                                        </div>
+                                                      </div>
+                                                                                            
+                                                      <img src="/HTML/hinhsize/4.png" alt="">                                                   
+                                                      <div class="row">                
+                                                        <div class="col-xs-2">
+                                                        </div>
+                                                        <div class="col-xs-8"> 
+                                                          <p>19mm</p> 
+                                                        </div>
+                                                        <div class="col-xs-2">
+                                                      </div>
+                                        </div>                                                                                    
+                                  </div>             
+                  </div>
+            </div>
+
+        </div>
+    </div>
+     
+       
+     
+        
+    
+      
+        
+        
+                   
+  
+       
+
+     
+
+    
+
+      
+
+
+         
+      
+          
+
+    <script>
+      // When the user clicks on div, open the popup
+      function myFunction() {
+        var popup = document.getElementById("myPopup");
+        popup.classList.toggle("show");
+      }
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+      <!-- Compiled and ninified Java script-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+
+  
+    <script>
+      /* Initiate Magnify Function
+      with the id of the image, and the strength of the magnifier glass:*/
+      magnify("myimage", 1.75);
+       
+      </script>
+
+    <script>
+      $("#btn1").on("click",function(){
+        $("#b1").toggle(350);
+      })
+      $("#btn2").on("click",function(){
+        $("#b2").toggle(350);
+      })
+      $("#btn3").on("click",function(){
+        $("#b3").toggle(350);
+      })
+    </script>
+</body>
+    
+
+</html>
