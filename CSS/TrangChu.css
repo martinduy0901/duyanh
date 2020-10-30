@@ -1,0 +1,132 @@
+
+body
+{
+    margin: 3px;
+    
+}
+header
+{  
+    border: solid ;
+    background-color: blueviolet;
+
+}
+#Logo
+{
+    font-size: 50px;
+    text-align: center;
+    border: solid;
+    background-color: cadetblue;
+    float: left;
+    height: 200px;
+    width:280px;
+    margin: 5px;
+}
+#Banner
+{   
+
+    font-size: 50px;
+    text-align: center;
+    border: solid;
+    background-color: darkgray;
+    height: 200px;
+    margin: 5px;
+    
+}
+nav
+{   
+    margin-top: 5px;
+    background-color:goldenrod;
+    border: solid;
+    border-width: 1px;
+    width: 100%;
+    float: left;
+  
+   
+  
+}
+ul
+{
+    border: solid;
+    float: left;
+    margin-top: 3px;
+    margin-left: 3px;
+    border-width: 1px;
+    padding: 5px;
+    text-align: center;
+}
+li
+{   
+
+    list-style-type: none;
+    display: inline;
+    border: solid;
+    border-width: 1px;
+    margin: 5px;
+}
+#Search
+{
+    border: solid;
+    border-radius: 15px;
+    border-width: 1px;
+    margin-top: 8px;
+    margin-right: 3px;
+    padding-left: 50px;
+    padding-right: 50px;
+    height:  30px;
+    float: right;
+}
+#listpicture
+{
+    clear: both;
+    width: 100%;
+    height: 300px;
+    background-color: gray;
+    border: solid;
+    border-width: 2px;
+    margin-top: 55px;
+    font-size: 50px;
+    text-align: center;
+}
+#BodyContent
+{   
+    border: solid;
+    border-width: 2px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content:space-between;
+    
+  
+
+}
+#BodyContent div
+{
+    
+    border: solid;
+}
+#BodyContent1
+{
+    display: flex;
+    flex-direction: column;
+}
+#BodyContent2
+{
+    display: flex;
+    flex-direction: row;
+}
+
+#BodyContent2 div
+{
+    width: 400px ;
+    height: 100px;
+    flex-wrap: wrap;
+}
+#BodyContent6, #BodyContent7
+{
+    width: 100px;
+    height: 250px;
+    border: solid;
+    border-width: 2px;
+    margin: 3px;
+}
